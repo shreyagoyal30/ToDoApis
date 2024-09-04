@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using ToDoApi.Data;
+using TodoApi.Services;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,6 +9,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddDbContext<ToDoContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddSingleton<RabbitMqServiceProducer>(); // Register RabbitMqService
+builder.Services.AddHostedService<RabbitMqServiceConsumer>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

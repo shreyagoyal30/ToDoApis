@@ -102,3 +102,6 @@ C:\Users\ShreyaGoyal\source\repos\Todo\Todo\obj\Debug\net8.0\refint\Todo.dll
 C:\Users\ShreyaGoyal\source\repos\Todo\Todo\obj\Debug\net8.0\Todo.pdb
 C:\Users\ShreyaGoyal\source\repos\Todo\Todo\obj\Debug\net8.0\Todo.genruntimeconfig.cache
 C:\Users\ShreyaGoyal\source\repos\Todo\Todo\obj\Debug\net8.0\ref\Todo.dll
+C:\Users\ShreyaGoyal\source\repos\Todo\Todo\obj\Debug\net8.0\Todo.sourcelink.json
+C:\Users\ShreyaGoyal\source\repos\Todo\Todo\bin\Debug\net8.0\RabbitMQ.Client.dll
+C:\Users\ShreyaGoyal\source\repos\Todo\Todo\bin\Debug\net8.0\Newtonsoft.Json.dll

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using TodoApi.Services;
 using ToDoApi.Data;
 using ToDoApi.Models;
 
@@ -10,10 +11,11 @@ namespace ToDoApi.Controllers
     public class ToDosController : ControllerBase
     {
         private readonly ToDoContext _context;
-
-        public ToDosController(ToDoContext context)
+        private readonly RabbitMqServiceProducer _rabbitMqService;
+        public ToDosController(ToDoContext context, RabbitMqServiceProducer rabbitMqService)
         {
             _context = context;
+            _rabbitMqService = rabbitMqService;
         }
 
         // GET: api/ToDos
@@ -47,6 +49,9 @@ namespace ToDoApi.Controllers
             _context.ToDos.Add(toDo);
             await _context.SaveChangesAsync();
 
+            var message = $"New ToDo created: {toDo.Title}";
+            _rabbitMqService.SendMessage(toDo);
+           
             return CreatedAtAction("GetToDo", new { id = toDo.Id }, toDo);
         }
 
