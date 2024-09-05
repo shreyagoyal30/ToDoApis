@@ -24,6 +24,7 @@
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {},
+          "https://cloud-lytx-nexus.aws.drivecaminc.xyz/nexus/repository/...": {},
           "https://cloud-lytx-nexus.aws.drivecaminc.xyz/nexus/repository/Lytx-Release-NuGet-Repo/": {},
           "https://cloud-lytx-nexus.aws.drivecaminc.xyz/nexus/repository/Lytx-ThirdParty-NuGet-Repo/": {}
         },
@@ -48,6 +49,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.8, )"
@@ -57,6 +66,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.8, )"
+            },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[8.0.2, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",
@@ -73,6 +86,10 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[8.0.2, )"
             }
           },
           "imports": [
